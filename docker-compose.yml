@@ -27,6 +27,8 @@ services:
       - PGPASSWORD=postgres_password
       - PGPORT=5432
   client:
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     build:
       dockerfile: Dockerfile.dev
       context: ./client
